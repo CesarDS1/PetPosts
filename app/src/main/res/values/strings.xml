@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PetPost</string>
+    <string name="description">Descripción</string>
+    <string name="title">Título</string>
+    <string name="save">Guardar</string>
+    <string name="create_post">Crear nuevo post</string>
+    <string name="autor">Autor</string>
+    <string name="release_date">Fecha de publicación</string>
+    <string name="likes">Likes</string>
+    <string name="views">Views</string>
+    <string name="sort_by">Ordernar por</string>
+    <string-array name="sort_types">
+        <item>Likes</item>
+        <item>Views</item>
+    </string-array>
+</resources>
