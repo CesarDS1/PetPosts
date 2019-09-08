@@ -7,6 +7,10 @@ import com.cesar.petpost.mvp.view.MainView
 
 class MainPresenter(private val mainView: MainView, private val petPostDataSource: PostDataSource) {
 
+    fun initViews(){
+        mainView.setupSpinner()
+    }
+
     fun getPetPosts() {
         val countPosts = petPostDataSource.countPosts()
 

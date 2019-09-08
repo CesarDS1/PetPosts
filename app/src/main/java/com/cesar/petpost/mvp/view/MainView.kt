@@ -3,8 +3,10 @@ package com.cesar.petpost.mvp.view
 import android.annotation.SuppressLint
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cesar.petpost.R
 import com.cesar.petpost.activities.MainActivity
 import com.cesar.petpost.adapter.PetPostAdapter
 import com.cesar.petpost.mvp.model.PetPost
@@ -21,6 +23,14 @@ class MainView(val mainActivity: MainActivity) {
     private var indexEnd: Int = 0
     private var orderSelected = 0
 
+    fun setupSpinner() {
+        val spinnerAdapter = ArrayAdapter.createFromResource(
+            mainActivity,
+            R.array.sort_types,
+            android.R.layout.simple_spinner_dropdown_item
+        )
+        mainActivity.sortSpinner.adapter = spinnerAdapter
+    }
 
     fun showListPost(posts: ArrayList<PetPost>) {
 

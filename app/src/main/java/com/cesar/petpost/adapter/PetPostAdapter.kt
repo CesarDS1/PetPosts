@@ -45,13 +45,16 @@ class PetPostAdapter(val petPostList: ArrayList<PetPost?>, private val context: 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is PetPostViewHolder) {
             val post = petPostList[position]
-            if (post != null) {
-                holder.userNameTv.text = post.authorUsername
-                holder.datePostTv.text = post.date
-                holder.likesTv.text = post.likes.toString()
-                holder.viewsTv.text = post.views.toString()
-                loadImages.loadWithGlide(context, post, holder.imagePostIv)
+            post?.run {
+                with(holder) {
+                    userNameTv.text = authorUsername
+                    datePostTv.text = date
+                    likesTv.text = likes.toString()
+                    viewsTv.text = views.toString()
+                }
+                loadImages.loadWithGlide(context, this, holder.imagePostIv)
             }
+
         }
     }
 
